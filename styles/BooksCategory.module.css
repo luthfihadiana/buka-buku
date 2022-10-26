@@ -8,9 +8,10 @@
   all: unset;
   position: absolute;
   left: 0;
+  top: 8px;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -48,9 +49,9 @@
 .grid {
   display: grid;
   gap: 1rem;
-  width: 100%;
   grid-template-columns: repeat(1,1fr);
   max-width: 800px;
+  justify-content: center;
 }
 
 .inputSearch{
@@ -60,7 +61,7 @@
   border-radius: 0.4rem;
   padding: 0.8rem;
   font-size: 1.4rem;
-  max-width: 768px;
+  max-width: 630px;
   margin-bottom: 0.8rem;
 }
 
@@ -91,6 +92,9 @@
 }
 
 @media only screen and (min-width: 426px){
+  .backButton{
+    top: 1.5rem;
+  }
   .container{
     padding: 0 2rem;
   }

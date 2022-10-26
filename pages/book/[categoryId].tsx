@@ -111,7 +111,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <a href="/" className={styles.backButton}>
-          <BsArrowLeftShort /> Back
+          <BsArrowLeftShort />
         </a>
         <h1 className={styles.title}>
           Buka<span className={styles.highlight}>Buku</span>
@@ -140,13 +140,18 @@ const Home: NextPage = () => {
         }
         {keyword === '' &&
           <div className={styles.pagination}>
-            <button onClick={() => handlePage('dec')}>
-              <BsFillArrowLeftCircleFill />
-            </button>
+            {page > 0 &&
+              <button onClick={() => handlePage('dec')}>
+                <BsFillArrowLeftCircleFill />
+              </button>
+            }
             <span>{page + 1}</span>
-            <button onClick={() => handlePage('inc')}>
-              <BsFillArrowRightCircleFill />
-            </button>
+            {
+              data && data?.length <= PAGE_SIZE &&
+              <button onClick={() => handlePage('inc')}>
+                <BsFillArrowRightCircleFill />
+              </button>
+            }
           </div>}
       </main>
     </div>
